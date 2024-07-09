@@ -55,7 +55,7 @@ print(f"The race has been going on for approximately {time_difference.total_seco
 with open("PYLIST.txt", "r") as MyFile:
     BoatFile = MyFile.read()
 BoatList = BoatParser(BoatFile)
-
+#Hours wasted debugging plz update 2
 # Boats
 NewBoatList = []
 #for i in range(1, len(BoatList) - 1, 2):
