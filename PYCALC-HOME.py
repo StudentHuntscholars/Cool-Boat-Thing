@@ -26,7 +26,7 @@ def BoatParser(BoatData):
     return BoatList
 
 
-# Define the GetAdjustedTime function.
+## Define the GetAdjustedTime function.
 def GetAdjustedTime(py, Elasted_time):
     return Elasted_time * 1000 / py
 
@@ -36,19 +36,19 @@ def BoatPrinter(BoatList):
 
 
 
-# Get the current time
+## Get the current time
 startime = datetime.now() # 20
 
 
-# Get today's date
+## Get today's date
 today = datetime.today()
 
 input()
 
-# Calculate the time difference
+## Calculate the time difference
 time_difference = datetime.now() - startime 
 
-# Print the time difference in seconds
+## Print the time difference in seconds
 print(f"The race has been going on for approximately {time_difference.total_seconds():.2f} seconds")
 
 
@@ -56,25 +56,25 @@ with open("PYLIST.txt", "r") as MyFile:
     BoatFile = MyFile.read()
 BoatList = BoatParser(BoatFile)
 #Hours wasted debugging plz update 2
-# Boats
+## Boats
 NewBoatList = []
 #for i in range(1, len(BoatList) - 1, 2):
 #    NewBoatList.append(GetAdjustedTime(BoatList[i], time_difference).total_seconds())
 NewBoatList.append(GetAdjustedTime(BoatList[1], time_difference).total_seconds())
 NewBoatList.append(GetAdjustedTime(BoatList[3], time_difference).total_seconds())
 
-# Calculate the adjusted times for boats (ILCA 6 and ILCA 7)
+## Calculate the adjusted times for boats (ILCA 6 and ILCA 7)
 """adjus_time = GetAdjustedTime(py_table["ILCA 6"], time_difference)
 adjus_time1 = GetAdjustedTime(py_table["ILCA 7"], time_difference)"""
 
-# Convert the timedelta objects to seconds
+## Convert the timedelta objects to seconds
 #adjus_time_seconds = adjus_time.total_seconds()
 #adjus_time1_seconds = adjus_time1.total_seconds()
 
-# Print the adjusted times in seconds
-# Calculate the difference needed for the ILCA 7 to beat the ILCA 6
+## Print the adjusted times in seconds
+## Calculate the difference needed for the ILCA 7 to beat the ILCA 6
 time_difference_seconds = NewBoatList[1] - NewBoatList[0]
 print(time_difference_seconds, NewBoatList)
-# Print the difference needed for the ILCA 7 to beat the ILCA 6
+## Print the difference needed for the ILCA 7 to beat the ILCA 6
 if time_difference_seconds > 0:
     print(f"The boat needs to finish ahead by approximately {time_difference_seconds:.0f} seconds to win.")
