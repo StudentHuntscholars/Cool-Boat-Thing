@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-
+## Parser to get boat data from the boat database "PYLIST.txt"
 def BoatParser(BoatData):
     BoatList = []
     tempName = ""
@@ -27,6 +27,7 @@ def BoatParser(BoatData):
 
 
 ## Define the GetAdjustedTime function.
+## This is used to get corrected time on PY, Time Elased in seconds * 1000 / the boat's Py num
 def GetAdjustedTime(py, Elasted_time):
     return Elasted_time * 1000 / py
 
@@ -43,7 +44,7 @@ startime = datetime.now() # 20
 ## Get today's date
 today = datetime.today()
 
-input()
+input("Enter a character to get results ")
 
 ## Calculate the time difference
 time_difference = datetime.now() - startime 
@@ -62,19 +63,25 @@ NewBoatList = []
 #    NewBoatList.append(GetAdjustedTime(BoatList[i], time_difference).total_seconds())
 NewBoatList.append(GetAdjustedTime(BoatList[1], time_difference).total_seconds())
 NewBoatList.append(GetAdjustedTime(BoatList[3], time_difference).total_seconds())
-
+"""Need to work on how to print the boat names and where
+they need to be on the race track to win. This is done by boat class and."""
 ## Calculate the adjusted times for boats (ILCA 6 and ILCA 7)
+
 """adjus_time = GetAdjustedTime(py_table["ILCA 6"], time_difference)
 adjus_time1 = GetAdjustedTime(py_table["ILCA 7"], time_difference)"""
 
 ## Convert the timedelta objects to seconds
+
 #adjus_time_seconds = adjus_time.total_seconds()
 #adjus_time1_seconds = adjus_time1.total_seconds()
 
 ## Print the adjusted times in seconds
 ## Calculate the difference needed for the ILCA 7 to beat the ILCA 6
+
 time_difference_seconds = NewBoatList[1] - NewBoatList[0]
 print(time_difference_seconds, NewBoatList)
+
 ## Print the difference needed for the ILCA 7 to beat the ILCA 6
+
 if time_difference_seconds > 0:
     print(f"The boat needs to finish ahead by approximately {time_difference_seconds:.0f} seconds to win.")
