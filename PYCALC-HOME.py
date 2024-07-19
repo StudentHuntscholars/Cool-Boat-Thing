@@ -85,3 +85,5 @@ print(time_difference_seconds, NewBoatList)
 
 if time_difference_seconds > 0:
     print(f"The boat needs to finish ahead by approximately {time_difference_seconds:.0f} seconds to win.")
+else:
+    print ("The race was not started correctly. ,\n, Please try again")
