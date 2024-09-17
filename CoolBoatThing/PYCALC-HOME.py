@@ -79,7 +79,7 @@ adjus_time1 = GetAdjustedTime(py_table["ILCA 7"], time_difference)"""
 ## Calculate the difference needed for the ILCA 7 to beat the ILCA 6
 
 time_difference_seconds = NewBoatList[1] - NewBoatList[0]
-print(time_difference_seconds, NewBoatList)
+#print(time_difference_seconds, NewBoatList)
 
 ## Print the difference needed for the ILCA 7 to beat the ILCA 6
 

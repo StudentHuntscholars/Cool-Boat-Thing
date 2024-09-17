@@ -5,4 +5,3 @@ ILCA_7 1102
 505 896 
 2000 1118 
 Comet_Trio_MK_1 1092 
-RS Venture 1114
